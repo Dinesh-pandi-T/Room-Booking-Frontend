@@ -1,0 +1,44 @@
+[
+  {
+    "id": "room101",
+    "name": "Deluxe King Room",
+    "type": "Deluxe",
+    "price": 3500,
+    "capacity": 2,
+    "amenities": ["WiFi", "Air Conditioning", "TV", "Room Heater"],
+    "images": [
+      "https://www.thelalit.com/wp-content/uploads/2024/10/DeluxeRoom-A.jpg",
+      "https://www.shutterstock.com/image-photo/prime-park-hotel-lombok-indonesia-600nw-2665184301.jpg"
+    ],
+    "description": "A spacious deluxe king room equipped with premium amenities.",
+    "available": true
+  },
+  {
+    "id": "room102",
+    "name": "Standard Double Room",
+    "type": "Standard",
+    "price": 2500,
+    "capacity": 2,
+    "amenities": ["WiFi", "TV"],
+    "images": [
+      "https://media.istockphoto.com/id/1366246794/photo/standard-twin-room-in-hotel.jpg?s=612x612&w=0&k=20&c=FWGs33viYJKetViJFnd2wzkWNMBpB-6l88Tds7-HVnE=",
+      "https://q-xx.bstatic.com/xdata/images/hotel/max500/572447848.jpg?k=4ba2d3d12c0fe6d5c26b7b3efa0e830930fb1923517f827f3b8f6d9ed7999110&o="
+    ],
+    "description": "Comfortable double room best suited for couples and business travelers.",
+    "available": true
+  },
+  {
+    "id": "room103",
+    "name": "Family Suite",
+    "type": "Suite",
+    "price": 5500,
+    "capacity": 4,
+    "amenities": ["WiFi", "Air Conditioning", "Kitchenette", "Smart TV"],
+    "images": [
+      "https://webbox.imgix.net/images/hxgqzaejlhihmkxd/c300b8a4-6689-4a3e-8c6a-fd0798a43e6d.jpg?auto=format,compress&fit=crop&crop=entropy",
+      "https://www.royallancaster.com/wp-content/uploads/2018/05/Studio-Family-Suite-1_v2-min.jpg"
+    ],
+    "description": "Perfect for families, this suite includes a separate living area.",
+    "available": false
+  }
+]
