@@ -11,8 +11,9 @@ function App() {
   useEffect(()=>{
     const fetchbookingData = async()=>{
     try{
-      const response = await fetch("https://booking-backend-3ugk.onrender.com/api");
+      const response = await fetch("https://booking-backend-3ugk.onrender.com/api/rooms");
       const d = await response.json();
+      
       setData(d);
     }catch(err){}
   };

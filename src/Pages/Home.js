@@ -12,12 +12,12 @@ const Home = () => {
     const fetchRooms = async () => {
       try {
         const res = await API.get("/rooms");
+        // console.log(res);
+        
+        const availableRooms =res.data;
+        // console.log(availableRooms);
 
-        const availableRooms = res.data.data.filter(
-          (room) => room.available === true
-        );
-
-        setRooms(availableRooms);
+        setRooms(availableRooms.data);
       } catch (err) {
         console.error("Error fetching rooms:", err);
       } finally {
@@ -63,7 +63,7 @@ const Home = () => {
             <div
               className="q"
               key={room.roomId}
-              onClick={() => navigate(`/booking/${room.roomId}`)}
+              onClick={() => navigate(`/booking/${room._id}`)}
             >
               <div className="imageContainer">
                 {room.images?.map((img, i) => (

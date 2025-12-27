@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./../Styles/Booking.css";
-import API from "../Services/api"; // optional backend update
+import API from "../Services/api"; 
+
 
 const BookingRoom = () => {
   const { id } = useParams();
-  const { data } = useOutletContext();
+  // const { data } = useOutletContext();
 
   const user = JSON.parse(localStorage.getItem("user"));
   const isUser = user?.role === "user";
@@ -15,9 +16,16 @@ const BookingRoom = () => {
   const [toDate, setToDate] = useState("");
 
   useEffect(() => {
-    const obj = data.find((em) => em.id == id);
-    setRes(obj);
-  }, [id, data]);
+      const fetchRoom = async ()=> {
+        try {
+          const room = await API.get(`/rooms/${id}`);
+          console.log(room.data.data);
+
+          setRes(room.data.data);
+        } catch (error) {}
+      };
+      fetchRoom();
+  }, [id]);
 
   const handleBooking = async () => {
     if (!fromDate || !toDate) {
@@ -64,7 +72,6 @@ const BookingRoom = () => {
         ))}
       </div>
 
-      {/* DATE SELECTION */}
       {isUser && res.available !== false && (
         <div className="date-box">
           <label>From Date</label>
@@ -87,7 +94,6 @@ const BookingRoom = () => {
         </div>
       )}
 
-      {/* ROOM NOT AVAILABLE */}
       {res.available === false && (
         <p className="not-available">Room Not Available</p>
       )}
